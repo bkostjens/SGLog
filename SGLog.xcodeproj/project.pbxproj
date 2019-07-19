@@ -26,7 +26,6 @@
 		29BC541522DF53D3005D5502 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		29BC541722DF6B16005D5502 /* AdditionalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalField.swift; sourceTree = "<group>"; };
 		29E7C25A22E1A85900610443 /* LogQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogQueue.swift; sourceTree = "<group>"; };
-		29E7C25C22E1D42F00610443 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +66,6 @@
 				29BC541322DF284E005D5502 /* ErrorLevel.swift */,
 				29BC541522DF53D3005D5502 /* Server.swift */,
 				29E7C25A22E1A85900610443 /* LogQueue.swift */,
-				29E7C25C22E1D42F00610443 /* README.md */,
 			);
 			path = SGLog;
 			sourceTree = "<group>";
