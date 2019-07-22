@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode10.2
 xcode_project: SGLog.xcodeproj # path to your xcodeproj folder
-xcode_scheme: SGLog
+xcode_scheme: SGLogTests
 xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
