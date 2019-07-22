@@ -14,7 +14,19 @@
 		29BC541622DF53D3005D5502 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC541522DF53D3005D5502 /* Server.swift */; };
 		29BC541822DF6B16005D5502 /* AdditionalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC541722DF6B16005D5502 /* AdditionalField.swift */; };
 		29E7C25B22E1A85900610443 /* LogQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E7C25A22E1A85900610443 /* LogQueue.swift */; };
+		29E7C27122E20DF300610443 /* SGLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E7C27022E20DF300610443 /* SGLogTests.swift */; };
+		29E7C27322E20DF300610443 /* SGLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299ED27D22DEFF2B00C90466 /* SGLog.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29E7C27422E20DF300610443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 299ED27422DEFF2A00C90466 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 299ED27C22DEFF2B00C90466;
+			remoteInfo = SGLog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		299ED27D22DEFF2B00C90466 /* SGLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +38,9 @@
 		29BC541522DF53D3005D5502 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		29BC541722DF6B16005D5502 /* AdditionalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalField.swift; sourceTree = "<group>"; };
 		29E7C25A22E1A85900610443 /* LogQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogQueue.swift; sourceTree = "<group>"; };
+		29E7C26E22E20DF300610443 /* SGLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E7C27022E20DF300610443 /* SGLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLogTests.swift; sourceTree = "<group>"; };
+		29E7C27222E20DF300610443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +51,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29E7C26B22E20DF300610443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E7C27322E20DF300610443 /* SGLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -43,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				299ED27F22DEFF2B00C90466 /* SGLog */,
+				29E7C26F22E20DF300610443 /* SGLogTests */,
 				299ED27E22DEFF2B00C90466 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				299ED27D22DEFF2B00C90466 /* SGLog.framework */,
+				29E7C26E22E20DF300610443 /* SGLogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +93,15 @@
 				29E7C25A22E1A85900610443 /* LogQueue.swift */,
 			);
 			path = SGLog;
+			sourceTree = "<group>";
+		};
+		29E7C26F22E20DF300610443 /* SGLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				29E7C27022E20DF300610443 /* SGLogTests.swift */,
+				29E7C27222E20DF300610443 /* Info.plist */,
+			);
+			path = SGLogTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,18 +136,40 @@
 			productReference = 299ED27D22DEFF2B00C90466 /* SGLog.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		29E7C26D22E20DF300610443 /* SGLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E7C27822E20DF300610443 /* Build configuration list for PBXNativeTarget "SGLogTests" */;
+			buildPhases = (
+				29E7C26A22E20DF300610443 /* Sources */,
+				29E7C26B22E20DF300610443 /* Frameworks */,
+				29E7C26C22E20DF300610443 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29E7C27522E20DF300610443 /* PBXTargetDependency */,
+			);
+			name = SGLogTests;
+			productName = SGLogTests;
+			productReference = 29E7C26E22E20DF300610443 /* SGLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		299ED27422DEFF2A00C90466 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Prosilic;
 				TargetAttributes = {
 					299ED27C22DEFF2B00C90466 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+					};
+					29E7C26D22E20DF300610443 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -131,12 +187,20 @@
 			projectRoot = "";
 			targets = (
 				299ED27C22DEFF2B00C90466 /* SGLog */,
+				29E7C26D22E20DF300610443 /* SGLogTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		299ED27B22DEFF2B00C90466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E7C26C22E20DF300610443 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,7 +223,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29E7C26A22E20DF300610443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E7C27122E20DF300610443 /* SGLogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29E7C27522E20DF300610443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 299ED27C22DEFF2B00C90466 /* SGLog */;
+			targetProxy = 29E7C27422E20DF300610443 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		299ED28322DEFF2B00C90466 /* Debug */ = {
@@ -339,6 +419,42 @@
 			};
 			name = Release;
 		};
+		29E7C27622E20DF300610443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3EC6J3LL7V;
+				INFOPLIST_FILE = SGLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barrykostjens.SGLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29E7C27722E20DF300610443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3EC6J3LL7V;
+				INFOPLIST_FILE = SGLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barrykostjens.SGLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +472,15 @@
 			buildConfigurations = (
 				299ED28622DEFF2B00C90466 /* Debug */,
 				299ED28722DEFF2B00C90466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E7C27822E20DF300610443 /* Build configuration list for PBXNativeTarget "SGLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E7C27622E20DF300610443 /* Debug */,
+				29E7C27722E20DF300610443 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
