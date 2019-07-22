@@ -84,18 +84,23 @@ extension GELF : Codable {
         var intValue: Int?
         var stringValue: String
         
-        init?(intValue: Int) { self.intValue = intValue; self.stringValue = "\(intValue)" }
-        init?(stringValue: String) { self.stringValue = stringValue }
+        init?(intValue: Int) { self.intValue = intValue; self.stringValue = "\(intValue)"; return nil }
+        init?(stringValue: String) {
+            self.stringValue = stringValue
+            if (!self.stringValue.hasPrefix("_")) {
+                return nil
+            }
+        }
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(version, forKey: .version)
-        try container.encode(host, forKey: .host)
-        try container.encode(short_message, forKey: .short_message)
-        try container.encode(timestamp, forKey: .timestamp)
-        try container.encode(level, forKey: .level)
+        try container.encode(self.version, forKey: .version)
+        try container.encode(self.host, forKey: .host)
+        try container.encode(self.short_message, forKey: .short_message)
+        try container.encode(self.timestamp, forKey: .timestamp)
+        try container.encode(self.level, forKey: .level)
         
         if let full_message = self.full_message {
             try container.encode(full_message, forKey: .full_message)
@@ -111,31 +116,30 @@ extension GELF : Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        version = try container.decode(String.self, forKey: .version)
-        host = try container.decode(String.self, forKey: .host)
-        short_message = try container.decode(String.self, forKey: .short_message)
-        timestamp = try container.decode(Double.self, forKey: .timestamp)
-        level = try container.decode(Int.self, forKey: .level)
-        full_message = try? container.decode(String.self, forKey: .full_message)
+        self.version = try container.decode(String.self, forKey: .version)
+        self.host = try container.decode(String.self, forKey: .host)
+        self.short_message = try container.decode(String.self, forKey: .short_message)
+        self.timestamp = try container.decode(Double.self, forKey: .timestamp)
+        self.level = try container.decode(Int.self, forKey: .level)
+        self.full_message = try? container.decode(String.self, forKey: .full_message)
         
         let dynamicContainer = try decoder.container(keyedBy: DynamicCodingKeys.self)
+        if (dynamicContainer.allKeys.count == 0) { return }
+      
         self.additionalFields = []
-        
         for key in dynamicContainer.allKeys {
-            if key.stringValue.hasPrefix("_") {
-                if let v = try? dynamicContainer.decode(String.self, forKey: key) {
-                    self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
-                } else if let v = try? dynamicContainer.decode(Bool.self, forKey: key) {
-                    self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
-                } else if let v = try? dynamicContainer.decode(Int.self, forKey: key) {
-                    self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
-                } else if let v = try? dynamicContainer.decode(Double.self, forKey: key) {
-                    self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
-                } else if let v = try? dynamicContainer.decode(Float.self, forKey: key) {
-                    self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
-                } else {
-                    throw DecodingError.invalidValueType
-                }
+            if let v = try? dynamicContainer.decode(String.self, forKey: key) {
+                self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
+            } else if let v = try? dynamicContainer.decode(Bool.self, forKey: key) {
+                self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
+            } else if let v = try? dynamicContainer.decode(Int.self, forKey: key) {
+                self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
+            } else if let v = try? dynamicContainer.decode(Double.self, forKey: key) {
+                self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
+            } else if let v = try? dynamicContainer.decode(Float.self, forKey: key) {
+                self.additionalFields?.append(AdditionalField(key: key.stringValue, value: v))
+            } else {
+                throw DecodingError.invalidValueType
             }
         }
     }

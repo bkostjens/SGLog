@@ -30,7 +30,7 @@ extension AdditionalField: Encodable {
         
         init?(intValue: Int) {
             self.intValue = intValue
-            stringValue = "\(intValue)"
+            self.stringValue = "\(intValue)"
         }
         
         init?(stringValue: String) {
@@ -53,13 +53,13 @@ extension AdditionalField: Encodable {
             return
         }
         
-        switch value {
+        switch self.value {
         case is String:
-            try container.encode(value as! String, forKey: key)
+            try container.encode(self.value as! String, forKey: key)
         case is Double:
-            try container.encode(value as! Double, forKey: key)
+            try container.encode(self.value as! Double, forKey: key)
         case is Int:
-            try container.encode(value as! Int, forKey: key)
+            try container.encode(self.value as! Int, forKey: key)
         default:
             throw EncodingError.invalidValueType
         }
