@@ -12,6 +12,13 @@ public struct AdditionalField {
     var key : String
     var value : Any?
     
+    /**
+     Additional Field initialiser
+     
+     - Parameters:
+        - key: the key, must be a valid string (^[\w\.\-]*$)
+        - value: can be a String, Double, Float, Int or Bool
+    */
     public init(key: String, value: Any?) {
         self.key = key
         self.value = value
@@ -58,8 +65,12 @@ extension AdditionalField: Encodable {
             try container.encode(self.value as! String, forKey: key)
         case is Double:
             try container.encode(self.value as! Double, forKey: key)
+        case is Float:
+            try container.encode(self.value as! Float, forKey: key)
         case is Int:
             try container.encode(self.value as! Int, forKey: key)
+        case is Bool:
+            try container.encode(self.value as! Bool, forKey: key)
         default:
             throw EncodingError.invalidValueType
         }
