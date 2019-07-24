@@ -7,7 +7,7 @@ A Swifty GrayLog Framework, supporting GELF additional fields and offline log qu
 
 | SGLog | iOS | Swift
 |--|--|--|
-| 0.1 | iOS => 10.1 | Swift 5 |
+| 0.1 | iOS >= 10.1 | Swift 5 |
  
 ## Installation
 ### Carthage
