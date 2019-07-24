@@ -16,11 +16,11 @@ public struct AdditionalField {
      Additional Field initialiser
      
      - Parameters:
-        - key: the key, must be a valid string (^[\w\.\-]*$)
+        - key: the key, must be a valid string of regex (^[\w\.\-]*$)
         - value: can be a String, Double, Float, Int or Bool
     */
     public init(key: String, value: Any?) {
-        self.key = key
+        self.key = key.hasPrefix("_") ? key : "_\(key)"
         self.value = value
     }
 }
