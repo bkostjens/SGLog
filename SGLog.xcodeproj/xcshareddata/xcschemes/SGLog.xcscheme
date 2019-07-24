@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29E7C26D22E20DF300610443"
+               BuildableName = "SGLogTests.xctest"
+               BlueprintName = "SGLogTests"
+               ReferencedContainer = "container:SGLog.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "299ED27C22DEFF2B00C90466"
+            BuildableName = "SGLog.framework"
+            BlueprintName = "SGLog"
+            ReferencedContainer = "container:SGLog.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
