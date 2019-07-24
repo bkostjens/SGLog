@@ -72,6 +72,6 @@ See the example below shows how additional fields can be used within the log fun
 	let message = "Test Log Message"
 	let fullMessage = "A longer message containing more info about the stuff being logged"
 	
-	// Send to log to the graylog server
+	// Send the log to the graylog server
 	SGLog.info(message, fullMessage: fullMessage, additionalFields: additionalFields)
 	
