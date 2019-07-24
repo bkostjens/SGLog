@@ -50,7 +50,7 @@ SGLog supports [GELF additional fields](https://docs.graylog.org/en/3.0/pages/ge
 
 Allowed characters in field keys are any word character (letter, number, underscore), dashes and dots. The verifying regular expression is: `^[\w\.\-]*$`. Key can not be `'_id'`.
 
-See the example below shows how additional fields can be used within the log functions.
+See the example below to see how additional fields can be used with the log functions.
 
 #### Example usage
 
