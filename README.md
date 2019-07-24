@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.com/bkostjens/SGLog.svg?branch=master)](https://travis-ci.com/bkostjens/SGLog)
+[![Build Status](https://travis-ci.org/bkostjens/SGLog.svg?branch=master)](https://travis-ci.org/bkostjens/SGLog)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## SGLog
