@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/bkostjens/SGLog.svg?branch=master)](https://travis-ci.org/bkostjens/SGLog)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Platform](https://img.shields.io/badge/platform-iOS-brightgreen)
+[![MIT License](https://img.shields.io/github/license/bkostjens/SGLog)](https://github.com/bkostjens/SGLog/blob/master/LICENSE)
 
 ## SGLog
 A Swifty GrayLog Framework, supporting GELF additional fields and offline log queuing out of the box.
