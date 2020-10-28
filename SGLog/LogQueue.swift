@@ -9,7 +9,7 @@
 import Foundation
 
 class LogQueue {
-    private var queue : [GELF]?
+    private var queue : [GELF] = []
     private var logfile : URL
     
     init() {
@@ -22,13 +22,13 @@ class LogQueue {
     }
     
     public func addToQueue(_ gelf: GELF) {
-        self.queue?.append(gelf)
+        self.queue.append(gelf)
     }
     
     public func getQueuedItem() -> GELF? {
         
-        if let gelf = self.queue?.first {
-            self.queue?.removeFirst()
+        if let gelf = self.queue.first {
+            self.queue.removeFirst()
             return gelf
         }
         
